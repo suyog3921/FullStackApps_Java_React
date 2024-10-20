@@ -1,0 +1,15 @@
+package com.demo.userrepositories;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.demo.entities.User;
+
+public interface UserReposittory extends JpaRepository<User, Integer>{
+
+	Optional<User> findById(long id);
+
+	void deleteById(long id);
+
+}

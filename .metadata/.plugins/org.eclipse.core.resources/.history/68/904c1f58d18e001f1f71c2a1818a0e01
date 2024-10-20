@@ -1,0 +1,21 @@
+package com.demo.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.demo.entities.User;
+import com.demo.userrepositories.UserReposittory;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private UserReposittory userRepository;
+	
+	
+	@Override
+	public User createUser(User user) {
+		return userRepository.save(user);
+	}
+
+}
